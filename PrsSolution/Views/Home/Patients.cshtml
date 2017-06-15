@@ -70,6 +70,68 @@
 
                    </div>
                </div>
+               <!-- Modal -->
+               <div id="editModal" class="modal fade" role="dialog">
+                   <div class="modal-dialog">
+
+                       <!-- Modal content-->
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal">&times;</button>
+                               <h4 class="modal-title">Edit Patient</h4>
+                           </div>
+                           <div class="modal-body">
+                               <form class="form-horizontal" role="form" ng-submit="addRow()">
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">First Name</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="fname"
+                                                  ng-model="firstName" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">Last Name</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="lName"
+                                                  ng-model="lastName" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">Address</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="Address"
+                                                  ng-model="Address" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">DOB</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="Address"
+                                                  ng-model="dbo" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">Emergancy Address</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="Address"
+                                                  ng-model="emergancyContact" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <div class="col-md-12 text-center">
+                                           <input type="submit" value="Submit" class="btn btn-primary" />
+                                       </div>
+                                   </div>
+                               </form>
+                           </div>
+                           <div class="modal-footer">
+
+                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
            </div>
            <div class="input-group">
                <input class="form-control" type="text" placeholder="Search" />
@@ -80,7 +142,7 @@
        </div>
        <div class="col-md-7">
            <h2>Patient List</h2>
-           <table class="table">
+           <table class="table table-hover">
                <tr>
                    <th>
                        First Name
@@ -98,7 +160,7 @@
                        Emergency Contact
                    </th>
                </tr>
-               <tr ng-repeat="patient in patients">
+               <tr ng-repeat="patient in patients" ng:click="setSelected();">
                    <td>
                        {{patient.firstName}}
                    </td>
@@ -118,10 +180,20 @@
                </tr>
            </table>
        </div>
-       <div class="col-md-5">
+       <div ng-show="selected != null" class="col-md-5">
+           
            <h2>Patient Info</h2>
            <div class="well">
-               stuff
+               <h3>{{selected.firstName}} {{selected.lastName}}</h3>
+               <div class="col-md-6 text-left" style="margin-bottom:20px;">
+                   some data
+               </div>
+               <div class="col-md-6 text-left" style="margin-bottom:20px;">
+                   other data
+               </div>
+               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">Edit</button>
+               <button type="button" class="btn btn-success" data-toggle="modal">Transfer</button>
+               
            </div>
        </div>
    </div>

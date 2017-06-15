@@ -7,6 +7,8 @@
 
     function controller($scope) {
 
+       
+
         $scope.patients = [
             {
                 'firstName': 'Brain',
@@ -37,6 +39,11 @@
             $scope.Address = '';
             $scope.dbo = '';
             $scope.emergancyContact = '';
+        };
+
+        $scope.setSelected = function () {
+            $scope.selected = this.patient;
+            console.log($scope.selected);
         };
     }
 })();
