@@ -1,29 +1,90 @@
 ﻿@{
-    ViewBag.Title = "Inpatient Main";
+    ViewBag.Title = "Patient Profile";
 }
 
-<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-    <h2 class="col-sm-12">Patient Profile</h2>
-    <div class="col-sm-6">
-        <p style="font-weight: bold;">Name: </p>
-        <p>Connor Finholt</p>
-        <p style="font-weight: bold;">Sex: </p>
-        <p>Male</p>
-        <p style="font-weight: bold;">Reason for Admittance: </p>
-        <p>Depression</p>
-    </div>
-    <div class="col-sm-6">
-        <p style="font-weight: bold;">Date of Birth: </p>
-        <p>09/19/1994</p>
-        <p style="font-weight: bold;">Home Address: </p>
-        <p>100 Sesame St. Des Moines, IA</p>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-    </div>
-    <div class="col-sm-12">
-        <h3 class="col-sm-6">Transferring From: </h3>
-        <h3 class="col-sm-6">Mercy</h3>
+<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" ng-app="myApp">
+    <div ng-controller="controller">
+        <h2 class="col-sm-12">Patient Profile</h2>
+        <div class="col-sm-6">
+            <p style="font-weight: bold;">Name: </p>
+            <p>Connor Finholt</p>
+            <p style="font-weight: bold;">Sex: </p>
+            <p>Male</p>
+            <p style="font-weight: bold;">Reason for Admittance: </p>
+            <p>Depression</p>
+        </div>
+        <div class="col-sm-6">
+            <p style="font-weight: bold;">Date of Birth: </p>
+            <p>09/19/1994</p>
+            <p style="font-weight: bold;">Home Address: </p>
+            <p>100 Sesame St. Des Moines, IA</p>
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+        <div class="col-sm-12">
+            <h3>Transferring From: <span>Mercy</span></h3>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-primary btn-block">View Patient Documents</button>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+            <button class="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#acceptModal">Accept</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-danger btn-block" type="button" data-toggle="modal" data-target="#declineModal">Decline</button>
+        </div>
+
+        <!-- Accept Modal -->
+        <div id="acceptModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Thank You</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please contact the original hospital for more detailed information and to work out transfer logistics.</p>
+                        <h3>Hospital Name: <span>Mercy</span></h3>
+                        <h4>Phone Number: <span>515-223-6709</span></h4>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Accept Modal -->
+        <div id="declineModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">More Info Needed</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <h4>Please comment on why this transfer is being rejected:</h4>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Submit" class="btn btn-primary" data-dismiss="modal"/>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
