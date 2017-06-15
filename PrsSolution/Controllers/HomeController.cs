@@ -13,6 +13,13 @@ namespace PrsSolution.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Login page.";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
