@@ -34,6 +34,13 @@ namespace PrsSolution.Controllers
             return View();
         }
 
+        public ActionResult InpatientMain()
+        {
+            ViewBag.Message = "Inpatients Page";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
