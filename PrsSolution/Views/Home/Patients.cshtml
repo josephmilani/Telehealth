@@ -111,7 +111,7 @@
                                        </div>
                                    </div>
                                    <div class="form-group">
-                                       <label class="col-md-4 control-label">Emergancy Address</label>
+                                       <label class="col-md-4 control-label">Emergency Address</label>
                                        <div class="col-md-8">
                                            <input type="text" class="form-control" name="Address"
                                                   ng-model="emergancyContact" />
@@ -119,7 +119,7 @@
                                    </div>
                                    <div class="form-group">
                                        <div class="col-md-12 text-center">
-                                           <input type="submit" value="Submit" class="btn btn-primary" />
+                                           <input type="submit" value="Submit" class="btn btn-primary" data-dismiss="modal"/>
                                        </div>
                                    </div>
                                </form>
@@ -186,10 +186,15 @@
            <div class="well">
                <h3>{{selected.firstName}} {{selected.lastName}}</h3>
                <div class="col-md-6 text-left" style="margin-bottom:20px;">
-                   some data
+                   <p>Address: {{selected.Address}}</p>
+                   <p>DOB: {{selected.dbo}}</p>
+                   <p>Sex: Male</p>
                </div>
                <div class="col-md-6 text-left" style="margin-bottom:20px;">
-                   other data
+                   <div class="form-group">
+                       <input class="form-control" type="text" placeholder="Medically Cleared?" />
+                       <input class="form-control" type="text" placeholder="Violent?" />
+                   </div>
                </div>
                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">Edit</button>
                <button type="button" class="btn btn-success" data-toggle="modal">Transfer</button>
