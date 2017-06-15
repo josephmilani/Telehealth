@@ -6,41 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" href="~/lib/bootswatch/cosmo/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>*@
-
-
-
-
-
     <div id="sidebar">
         <div class="Title"><h1>Team Meet</h1></div>
             <div class="Title">
@@ -49,14 +17,13 @@
 
             </div>
         <ul class="nav">
-            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-            <li><a asp-controller="Home" asp-action="LeagueofLegends">League of Legends</a></li>
-                <li><a asp-controller="Home" asp-action="Team">Team</a></li>
-                <li><a asp-controller="Home" asp-action="Profile">Profile</a></li>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         </ul>
     </div>
     <div id="wrapper">
-        <nav class="navbar navbar-inverse no-margin">
+        <nav class="navbar navbar-inverse no-margin" style="border-radius:0px;">
             <div class="container-fluid">
                 <ul class="nav navbar-nav navbar-left">
                     <li>
@@ -81,16 +48,17 @@
             </div>
         </nav>
 
-        <main class="no-padding">
+        <main style="padding:20px;">
             @RenderBody()
         </main>
         <div id="footer">
-            <span class="moveRight">&copy; @DateTime.Now.Year - LeagueAppReal</span>
+            <span class="moveRight">&copy; @DateTime.Now.Year - PRS</span>
         </div>
     </div>
-    <script src="~/Scripts/JavaScript.js"></script>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/JavaScript.js"></script>
 </body>
 </html>
