@@ -2,33 +2,129 @@
     ViewBag.Title = "Transfer Requests";
 }
 
-<div class="col-sm-12" style="padding-right: 0px;">
-    <div class="col-sm-6 col-sm-offset-6" style="margin-bottom: 5px;">
-        <div class="col-sm-6">
-            <button class="btn btn-primary">New Patient/Transfer Request   <div class="glyphicon glyphicon-plus"></div></button>
-        </div>
-        <div class="input-group">
-            <input class="form-control" type="text" placeholder="Search" />
-            <div class="input-group-btn">
-                <button class="btn btn-primary"><div class="glyphicon glyphicon-search"></div></button>
-            </div>
-        </div>
-    </div>
+<div class="col-sm-12" style="padding-right: 0px;" ng-app="myApp">
+   <div ng-controller="controller">
+       <div class="col-sm-6 col-sm-offset-6" style="margin-bottom: 20px;">
+           <div class="col-sm-4">
+               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add Patient <span style="margin-left:5px;" class="glyphicon glyphicon-plus"></span></button>
+
+               <!-- Modal -->
+               <div id="myModal" class="modal fade" role="dialog">
+                   <div class="modal-dialog">
+
+                       <!-- Modal content-->
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal">&times;</button>
+                               <h4 class="modal-title">Add Patient</h4>
+                           </div>
+                           <div class="modal-body">
+                               <form class="form-horizontal" role="form" ng-submit="addRow()">
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">First Name</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="fname"
+                                                  ng-model="firstName" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">Last Name</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="lName"
+                                                  ng-model="lastName" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">Address</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="Address"
+                                                  ng-model="Address" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">DOB</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="Address"
+                                                  ng-model="dbo" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="col-md-4 control-label">Emergancy Address</label>
+                                       <div class="col-md-8">
+                                           <input type="text" class="form-control" name="Address"
+                                                  ng-model="emergancyContact" />
+                                       </div>
+                                   </div>
+                                   <div class="form-group">
+                                       <div class="col-md-12 text-center">
+                                           <input type="submit" value="Submit" class="btn btn-primary" />
+                                       </div>
+                                   </div>
+                               </form>
+                           </div>
+                           <div class="modal-footer">
+                             
+                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+           </div>
+           <div class="input-group">
+               <input class="form-control" type="text" placeholder="Search" />
+               <div class="input-group-btn">
+                   <button class="btn btn-primary"><div class="glyphicon glyphicon-search"></div></button>
+               </div>
+           </div>
+       </div>
+       <div class="col-md-7">
+           <h2>Patient List</h2>
+           <table class="table">
+               <tr>
+                   <th>
+                       First Name
+                   </th>
+                   <th>
+                       Last Name
+                   </th>
+                   <th>
+                       Address
+                   </th>
+                   <th>
+                       DOB
+                   </th>
+                   <th>
+                       Emergency Contact
+                   </th>
+               </tr>
+               <tr ng-repeat="patient in patients">
+                   <td>
+                       {{patient.firstName}}
+                   </td>
+                   <td>
+                       {{patient.lastName}}
+                   </td>
+                   <td>
+                       {{patient.Address}}
+                   </td>
+                   <td>
+                       {{patient.dbo}}
+                   </td>
+                   <td>
+                       {{patient.emergancyContact}}
+                   </td>
+
+               </tr>
+           </table>
+       </div>
+       <div class="col-md-5">
+           <h2>Patient Info</h2>
+           <div class="well">
+               stuff
+           </div>
+       </div>
+   </div>
     
-    <table class="table">
-        <tr>
-            <th>Patient</th>
-            <th>Address</th>
-            <th>Date of Birth</th>
-            <th>Sex</th>
-        </tr>
-
-        <tr>
-            <td>Connor Finholt</td>
-            <td>100 Sesame St.</td>
-            <td>09/19/1994</td>
-            <td>Male</td>
-        </tr>
-
-    </table>
+   
 </div>
