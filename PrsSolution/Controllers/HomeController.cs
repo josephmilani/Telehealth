@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PrsSolution.DAL;
+using PrsSolution.Models;
 
 namespace PrsSolution.Controllers
 {
@@ -10,6 +13,20 @@ namespace PrsSolution.Controllers
     {
         public ActionResult Index()
         {
+            using (var ctx = new TestDbContext())
+            {
+                var test = new Test()
+                {
+
+                    UserName = "username",
+                    Email = "testemail@gmail.com"
+                };
+
+                ctx.Test.Add(test);
+                ctx.SaveChanges();
+
+
+            }
             return View();
         }
 
