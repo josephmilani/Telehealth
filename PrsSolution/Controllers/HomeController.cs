@@ -20,6 +20,13 @@ namespace PrsSolution.Controllers
             return View();
         }
 
+        public ActionResult HospitalMain()
+        {
+            ViewBag.Message = "Hospital Main Page";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
