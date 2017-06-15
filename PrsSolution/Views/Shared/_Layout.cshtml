@@ -6,9 +6,11 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/lib/bootswatch/cosmo/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,8 +35,60 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
+    </div>*@
 
+
+
+
+
+    <div id="sidebar">
+        <div class="Title"><h1>Team Meet</h1></div>
+            <div class="Title">
+                <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                <h3 style="text-transform: uppercase;">@User.Identity.Name</h3>
+
+            </div>
+        <ul class="nav">
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="LeagueofLegends">League of Legends</a></li>
+                <li><a asp-controller="Home" asp-action="Team">Team</a></li>
+                <li><a asp-controller="Home" asp-action="Profile">Profile</a></li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse no-margin">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button id="sidebarToggle" class="btn btn-primary"><i class="fa fa-angle-left fa-lg"></i></button>
+                    </li>
+                    <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">TestBrand</a></li>
+                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a asp-controller="Auth" asp-action="Logout" class="btn btn-sm">
+                                <i class="fa fa-sign-in"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a asp-controller="Auth" asp-action="Login" class="btn btn-sm">
+                                <i class="fa fa-sign-in"></i> Login
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+        </nav>
+
+        <main class="no-padding">
+            @RenderBody()
+        </main>
+        <div id="footer">
+            <span class="moveRight">&copy; @DateTime.Now.Year - LeagueAppReal</span>
+        </div>
+    </div>
+    <script src="~/Scripts/JavaScript.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
