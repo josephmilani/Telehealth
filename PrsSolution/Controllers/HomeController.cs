@@ -30,6 +30,34 @@ namespace PrsSolution.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Login page.";
+
+            return View();
+        }
+
+        public ActionResult HospitalMain()
+        {
+            ViewBag.Message = "Hospital Main Page";
+
+            return View();
+        }
+
+        public ActionResult Patients()
+        {
+            ViewBag.Message = "Known Patients Page";
+
+            return View();
+        }
+
+        public ActionResult InpatientMain()
+        {
+            ViewBag.Message = "Inpatients Page";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

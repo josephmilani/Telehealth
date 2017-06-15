@@ -3,42 +3,34 @@
 }
 
 <div class="">
-    <div class="col-sm-8">
+    <div class="col-sm-12">
+        <table class="table">
+            <tr>
+                <th>Requesting Hospital</th>
+                <th>Date of Birth</th>
+                <th>Sex</th>
+                <th>Medically Cleared?</th>
+                <th>Violent?</th>
+                <th>Time in Queue</th>
+                <th>Urgency Level</th>
+                <th>Accept Transfer?</th>
+            </tr>
 
-        <h2>Patients</h2>
-        <div class="well">
-            <table class="table">
-                <tr>
-                    <th>Requesting Hospital</th>
-                    <th>Date of Birth</th>
-                    <th>Sex</th>
-                    <th>Medically Cleared?</th>
-                    <th>Violent?</th>
-                </tr>
-
-                <tr>
-                    <td>Mercy</td>
-                    <td>09/19/1994</td>
-                    <td>Male</td>
-                    <td>Yes</td>
-                    <td>No</td>
-                </tr>
-
-            </table>
-        </div>
+            <tr>
+                <td>Mercy</td>
+                <td>09/19/1994</td>
+                <td>Male</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>00:13</td>
+                <td>Medium</td>
+                <td>
+                    <div class="glyphicon glyphicon-ok"></div>
+                    <div class="glyphicon glyphicon-remove"></div>
+                </td>
+            </tr>
+        </table>
     </div>
-    <div class="col-sm-4">
-        <h2>Patient Info</h2>
-        <div class="well">
-            <h3>Basic Info and Links</h3>
-        </div>
-    </div>
-    @*<div class="col-sm-offset-8 col-sm-4">
-        <h2>Hospitals</h2>
-        <div class="well">
-            Daring Hospitals
-        </div>
-    </div>*@
 </div>
 @section Scripts {
     @*Insert any script tags for this page here*@
