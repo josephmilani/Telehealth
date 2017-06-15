@@ -10,16 +10,15 @@
 </head>
 <body>
     <div id="sidebar">
-        <div class="Title"><h1>Team Meet</h1></div>
+        <div class="Title"><h1>Welcome</h1></div>
             <div class="Title">
-                <i class="fa fa-user fa-3x" aria-hidden="true"></i>
                 <h3 style="text-transform: uppercase;">@User.Identity.Name</h3>
-
             </div>
         <ul class="nav">
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li>@Html.ActionLink("About", "About", "Home")</li>
-            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i><span>  Home</span></a></li>
+            <li><a href="@Url.Action("Patients", "Home")"><i class="fa fa-users"></i><span>  Patients</span></a></li>
+            <li><a href="@Url.Action("HospitalMain", "Home")"><i class="fa fa-arrow-circle-o-right"></i><span>  Outgoing Transfer Requests</span></a></li>
+            <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-arrow-circle-o-left"></i><span>  Incoming Transfer Requests</span></a></li>
         </ul>
     </div>
     <div id="wrapper">
@@ -29,7 +28,7 @@
                     <li>
                         <button id="sidebarToggle" class="btn btn-primary"><i class="fa fa-angle-left fa-lg"></i></button>
                     </li>
-                    <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">TestBrand</a></li>
+                    <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">ITP</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -38,13 +37,13 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    @*<ul class="nav navbar-nav navbar-right">
                         <li>
                             <a asp-controller="Auth" asp-action="Login" class="btn btn-sm">
                                 <i class="fa fa-sign-in"></i> Login
                             </a>
                         </li>
-                    </ul>
+                    </ul>*@
             </div>
         </nav>
 
