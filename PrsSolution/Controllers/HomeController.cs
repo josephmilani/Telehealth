@@ -51,9 +51,9 @@ namespace PrsSolution.Controllers
             return View();
         }
 
-        public ActionResult InpatientMain()
+        public ActionResult PatientProfile()
         {
-            ViewBag.Message = "Inpatients Page";
+            ViewBag.Message = "Patient Profile Page";
 
             return View();
         }
