@@ -27,6 +27,13 @@ namespace PrsSolution.Controllers
             return View();
         }
 
+        public ActionResult Patients()
+        {
+            ViewBag.Message = "Known Patients Page";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
